@@ -1,5 +1,5 @@
 from selenium import webdriver
-from applitools.selenium import Eyes, Target
+from applitools.selenium import Eyes, Target, BatchInfo
 import os
 
 
@@ -25,7 +25,7 @@ class HelloWorld:
         driver = webdriver.Chrome()
 
         # Start the test and set the browser's viewport size to 800x600.
-        eyes.open(driver, "Test app", "First test", {'width': 800, 'height': 600})
+        eyes.open(driver, "Test app", "Branch test", {'width': 800, 'height': 600})
 
         # Navigate the browser to the "hello world!" web-site.
         driver.get('https://demo.applitools.com')
