@@ -2,6 +2,7 @@ language: python
 python:
   - 3.7
 install:
+  - pip3 install selenium
   - pip3 install eyes.selenium
 script:
   - export APPLITOOLS_BATCH_ID=`echo ${TRAVIS_PULL_REQUEST_SHA:=$TRAVIS_COMMIT}`
