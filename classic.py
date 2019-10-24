@@ -1,5 +1,5 @@
 from selenium import webdriver
-from applitools.selenium import Eyes, Target
+from applitools.selenium import Eyes, Target, BatchInfo
 import os
 
 
@@ -18,7 +18,7 @@ class HelloWorld:
     batch_info    = BatchInfo(batch_name)
     batch_info.id = os.environ.get(batch_id)
     eyes.batch    = batch_info
-    
+
     try:
         capabilities = {
             'browserName': 'chrome',
