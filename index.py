@@ -11,7 +11,7 @@ from applitools.selenium import (
     DeviceName,
 )
 
-from applitools import logger
+from applitools.common import logger
 from applitools.common.logger import StdoutLogger
 
 logger.set_logger(StdoutLogger())
