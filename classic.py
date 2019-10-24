@@ -38,14 +38,14 @@ class HelloWorld:
         eyes.open(driver, "Test app", "First test", {'width': 800, 'height': 600})
 
         # Navigate the browser to the "hello world!" web-site.
-        driver.get('https://demo.applitools.com')
+        driver.get('https://applitools.com/helloworld')
 
         # Visual checkpoint #1.
         eyes.check("Login Window test", Target.window())
 
         # End the test.
         eyes.close()
-
+        
     finally:
 
         # Close the browser.
