@@ -10,6 +10,15 @@ class HelloWorld:
     # Initialize the eyes SDK and set your private API key.
     eyes.api_key = os.environ['APPLITOOLS_API_KEY']
 
+    # obtain the ID from the environment variables - the name should be specified as None
+    batch_name = None
+    batch_id   = os.environ.get('APPLITOOLS_BATCH_ID')
+
+    # set the batch
+    batch_info    = BatchInfo(batch_name)
+    batch_info.id = os.environ.get(batch_id)
+    eyes.batch    = batch_info
+    
     try:
         capabilities = {
             'browserName': 'chrome',
