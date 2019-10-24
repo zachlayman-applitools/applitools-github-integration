@@ -16,7 +16,7 @@ class HelloWorld:
 
     # set the batch
     batch_info    = BatchInfo(batch_name)
-    batch_info.id = os.environ.get(batch_id)
+    batch_info.id = batch_id
     eyes.batch    = batch_info
 
     try:
