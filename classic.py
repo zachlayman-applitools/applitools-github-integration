@@ -11,9 +11,19 @@ class HelloWorld:
     eyes.api_key = os.environ['APPLITOOLS_API_KEY']
 
     try:
-
+        capabilities = {
+            'browserName': 'chrome',
+            'browserVersion': '78.0',
+            'platformName': 'Windows 10',
+            'sauce:options': {
+            }
+        }
         # Open a Chrome browser.
-        driver = webdriver.Chrome()
+        username = os.environ["SAUCE_USERNAME"]
+        access_key = os.environ["SAUCE_ACCESS_KEY"]
+        # capabilities["tunnel-identifier"] = os.environ["TRAVIS_JOB_NUMBER"]
+        hub_url = "%s:%s@localhost:4445" % (username, access_key)
+        driver = webdriver.Remote(desired_capabilities=capabilities, command_executor="http://%s/wd/hub" % hub_url)
 
         # Start the test and set the browser's viewport size to 800x600.
         eyes.open(driver, "Test app", "First test", {'width': 800, 'height': 600})
