@@ -7,8 +7,9 @@ before_install:
   - google-chrome --headless --disable-gpu --no-sandbox --disable-dev-shm-usage --remote-debugging-port=9222 https://applitools.com &
 install:
   - pip3 install selenium
-  - pip3 install webdriver-manager
+  - pip4 install chromedriver
   - pip3 install eyes-selenium
 script:
   - export APPLITOOLS_BATCH_ID=`echo ${TRAVIS_PULL_REQUEST_SHA:=$TRAVIS_COMMIT}`
+  - python3 classic.py
   - python3 index.py

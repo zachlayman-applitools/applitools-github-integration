@@ -1,5 +1,5 @@
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver import Chrome
+
+from selenium import webdriver
 
 from applitools.selenium import (
     VisualGridRunner,
@@ -62,7 +62,7 @@ def run_test():
     eyes = initialize_eyes(runner)
 
     # Create a new Webdriver, ChromeDriverManager is uses for detect or download the chromedriver
-    driver = Chrome()
+    driver = webdriver.Chrome()
 
     # Navigate to the URL we want to test
     driver.get("https://demo.applitools.com")
