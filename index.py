@@ -62,7 +62,7 @@ def run_test():
     eyes = initialize_eyes(runner)
 
     # Create a new Webdriver, ChromeDriverManager is uses for detect or download the chromedriver
-    driver = Chrome(ChromeDriverManager())
+    driver = Chrome()
 
     # Navigate to the URL we want to test
     driver.get("https://demo.applitools.com")
