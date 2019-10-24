@@ -8,7 +8,7 @@ class HelloWorld:
     eyes = Eyes()
 
     # Initialize the eyes SDK and set your private API key.
-    eyes.api_key = os.environ['APPLITOOLS_API_KEY_GITHUB']
+    eyes.api_key = os.environ['APPLITOOLS_API_KEY']
 
     try:
 
