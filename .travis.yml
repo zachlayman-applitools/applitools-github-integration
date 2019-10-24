@@ -1,0 +1,12 @@
+language: python
+addons:
+  sauce_connect:
+    username: "matan"
+    access_key: "a56c483d-9c60-41e3-a396-d7a998141734"
+install:
+  - pip3 install selenium
+  - pip3 install eyes-selenium
+script:
+  - export APPLITOOLS_BATCH_ID=`echo ${TRAVIS_PULL_REQUEST_SHA:=$TRAVIS_COMMIT}`
+  - echo $APPLITOOLS_BATCH_ID
+  - python3 classic.py
