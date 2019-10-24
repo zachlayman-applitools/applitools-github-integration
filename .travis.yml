@@ -4,7 +4,7 @@ addons:
   chrome: stable
 before_install:
   - # start your web application and listen on `localhost`
-  - chrome --headless --disable-gpu --remote-debugging-port=9222 https://applitools.com
+  - google-chrome --headless --disable-gpu --remote-debugging-port=9222 https://applitools.com
 install:
   - pip3 install selenium
   - pip3 install webdriver-manager
